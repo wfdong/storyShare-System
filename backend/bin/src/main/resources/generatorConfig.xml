@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- properties resource="application.properties"/-->
+  <context id="mysqlTables">
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+    <jdbcConnection connectionURL="jdbc:mysql://47.105.81.242:3306/RestServiceDB" driverClass="com.mysql.jdbc.Driver" password="QAZwsx123!@#" userId="root" />
+    <javaModelGenerator targetPackage="smallloanplatform.beans.daobeans" targetProject="smallloanplatform" />
+    <sqlMapGenerator targetPackage="mapper" targetProject="smallloanplatform/src/main/resources" />
+    <javaClientGenerator targetPackage="smallloanplatform.dao.mybatismapper" targetProject="smallloanplatform" type="XMLMAPPER">
+        <property name="enableSubPackages" value="false" />
+        <property name="trimStrings" value="true" />
+    </javaClientGenerator>
+    <table schema="RestServiceDB" tableName="loan_transaction" domainObjectName="PersonalLoanTransactionBean">
+      <!-- columnOverride column="???" property="???" /-->
+    </table>
+  </context>
+</generatorConfiguration>

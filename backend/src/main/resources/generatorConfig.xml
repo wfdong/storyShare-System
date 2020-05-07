@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- properties resource="application.properties"/-->
+  <context id="mysqlTables">
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+    <jdbcConnection connectionURL="jdbc:mysql://3.21.161.37:3306/RestServiceDB?useSSL=false" driverClass="com.mysql.jdbc.Driver" password="QAZwsx123!@#" userId="root" />
+    <!-- <jdbcConnection connectionURL="jdbc:mysql://ec2-3-21-161-37.us-east-2.compute.amazonaws.com:3306/RestServiceDB" driverClass="com.mysql.jdbc.Driver" password="QAZwsx123!@#" userId="root" /> -->
+    <javaModelGenerator targetPackage="jokes.beans.daobeans" targetProject="jokes" />
+    <sqlMapGenerator targetPackage="mapper" targetProject="jokes/src/main/resources" />
+    <javaClientGenerator targetPackage="jokes.dao.mybatismapper" targetProject="jokes" type="XMLMAPPER">
+        <property name="enableSubPackages" value="false" />
+        <property name="trimStrings" value="true" />
+    </javaClientGenerator>
+    <table schema="RestServiceDB" tableName="users" domainObjectName="Users">
+    </table>
+    <table schema="RestServiceDB" tableName="user_role" domainObjectName="UserRole">
+    </table>
+    <table schema="RestServiceDB" tableName="token_cache" domainObjectName="TokenCache">
+    </table>
+    <table schema="RestServiceDB" tableName="joke_table" domainObjectName="JokeTable">
+    </table>
+    <table schema="RestServiceDB" tableName="joke_comments" domainObjectName="JokeComments">
+    </table>
+    <table schema="RestServiceDB" tableName="user_file" domainObjectName="UserFile">
+    </table>
+    <table schema="RestServiceDB" tableName="jokeLiked" domainObjectName="JokeLiked">
+    </table>
+    <table schema="RestServiceDB" tableName="table_statistics" domainObjectName="TableStatistics">
+    </table>
+  </context>
+</generatorConfiguration>
